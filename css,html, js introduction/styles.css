@@ -1,0 +1,15 @@
+h1 {
+    color: blue;
+    font-family: Trebuchet MS;
+}
+h2 {
+    color: green;
+    text-decoration: underline;
+}
+a{
+    text-decoration: none;
+}
+a:link{color: red}
+a:visited{color:gray}
+a:hover{color: pink; text-decoration: underline;}
+a:active{ color: green}
