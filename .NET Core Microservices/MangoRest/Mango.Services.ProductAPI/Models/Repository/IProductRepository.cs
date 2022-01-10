@@ -1,4 +1,6 @@
-﻿namespace Mango.Services.ProductAPI.Models.DTO
+﻿using Mango.Services.ProductAPI.Models.DTO;
+
+namespace Mango.Services.ProductAPI.Models.Repository
 {
     public interface IProductRepository
     {
