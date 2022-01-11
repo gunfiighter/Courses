@@ -68,7 +68,6 @@ namespace Mango.Web.Services
 
                 var apiResponseDTO = JsonConvert.DeserializeObject<T>(res);
                 return apiResponseDTO;
-
             }
         }
 
