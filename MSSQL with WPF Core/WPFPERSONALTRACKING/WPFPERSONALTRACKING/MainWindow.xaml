@@ -7,7 +7,7 @@
         xmlns:viewmodels="clr-namespace:WPFPERSONALTRACKING.ViewModels" 
         xmlns:views="clr-namespace:WPFPERSONALTRACKING.Views"
         mc:Ignorable="d"
-        Title="WPF Personal Tracking" Name="PersonalMainWindow" Height="540" Width="1200" WindowStartupLocation="CenterScreen" FontSize="24" FontWeight="Bold" Loaded="Window_Loaded" Icon="/Logo.png" ResizeMode="NoResize">
+        Title="WPF Personal Tracking" Name="PersonalMainWindow" Background="#FF49D1FF" Height="540" Width="1200" WindowStartupLocation="CenterScreen" FontSize="24" FontWeight="Bold" Loaded="Window_Loaded" Icon="/Logo.png" ResizeMode="NoResize">
     <Grid Background="#FF49D1FF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
