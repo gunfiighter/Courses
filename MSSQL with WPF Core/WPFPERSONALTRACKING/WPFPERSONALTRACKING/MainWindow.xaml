@@ -88,7 +88,7 @@
             </Button>
         </StackPanel>
         <StackPanel Grid.Row="6" Margin="0,2,0,0">
-            <Button Grid.Row="6" Name="btnPostition" Height="60" Width="250" HorizontalAlignment="Left">
+            <Button Grid.Row="6" Name="btnPostition" Height="60" Width="250" HorizontalAlignment="Left" Click="btnPostition_Click">
                 <Grid Width="230">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
@@ -129,6 +129,11 @@
             <views:DepartmentList>
                 
             </views:DepartmentList>
+        </DataTemplate>
+        <DataTemplate x:Name="PositionTemplate" DataType="{x:Type viewmodels:PositionViewModel}">
+            <views:PositionList>
+
+            </views:PositionList>
         </DataTemplate>
     </Window.Resources>
 </Window>
