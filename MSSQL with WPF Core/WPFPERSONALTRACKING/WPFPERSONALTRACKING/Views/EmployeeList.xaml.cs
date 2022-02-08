@@ -24,5 +24,11 @@ namespace WPFPERSONALTRACKING.Views
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeePage page = new EmployeePage();
+            page.ShowDialog();
+        }
     }
 }

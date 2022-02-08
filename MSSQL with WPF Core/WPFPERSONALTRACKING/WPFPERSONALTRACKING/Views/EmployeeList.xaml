@@ -62,7 +62,7 @@
             <Button Grid.Column="4" Content="Search" Name="btnSearch" Margin="20,5,-49,5"/>
             <Button Grid.Column="4" Grid.Row="1" Content="Clear" Name="btnClear" Margin="20,5,-49,5"/>
         </Grid>
-        <Button x:Name="btnAdd" Content="Add" FontSize="18" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Margin="40,5,40,5" />
+        <Button x:Name="btnAdd" Content="Add" FontSize="18" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Margin="40,5,40,5" Click="btnAdd_Click" />
         <Button x:Name="btnUpdate" Content="Update" FontSize="18" FontWeight="Bold" Grid.Column="2" Grid.Row="2" Margin="40,5,40,5" />
         <Button x:Name="btnDelete" Content="Delete" FontSize="18" FontWeight="Bold" Grid.Column="3" Grid.Row="2" Margin="40,5,40,5" />
     </Grid>
