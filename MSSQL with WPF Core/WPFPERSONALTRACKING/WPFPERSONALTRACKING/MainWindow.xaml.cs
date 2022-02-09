@@ -29,10 +29,6 @@ namespace WPFPERSONALTRACKING
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using (PERSONALTRACKINGContext db = new PERSONALTRACKINGContext())
-            {
-
-            }
         }
 
         private void btnDepartment_Click(object sender, RoutedEventArgs e)

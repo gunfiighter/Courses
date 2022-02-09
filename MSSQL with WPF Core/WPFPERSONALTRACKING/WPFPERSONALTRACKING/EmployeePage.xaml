@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFPERSONALTRACKING"
         mc:Ignorable="d"
-        Title="EmployeePage" Height="540" Width="800" Background="AliceBlue" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Logo.png" FontSize="18" FontFamily="Bold" Loaded="Window_Loaded">
+        Title="EmployeePage" Height="540" Width="800" Background="AliceBlue" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Images/Logo.png" FontSize="18" FontFamily="Bold" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60*"/>
