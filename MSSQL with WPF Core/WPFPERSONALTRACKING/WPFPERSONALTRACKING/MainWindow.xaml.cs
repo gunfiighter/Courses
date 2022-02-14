@@ -48,5 +48,11 @@ namespace WPFPERSONALTRACKING
             lblWindowsName.Content = "EmployeeList";
             DataContext = new EmployeeViewModel();
         }
+
+        private void btnTask_Click(object sender, RoutedEventArgs e)
+        {
+            lblWindowsName.Content = "Task List";
+            DataContext = new TaskViewModel();
+        }
     }
 }
