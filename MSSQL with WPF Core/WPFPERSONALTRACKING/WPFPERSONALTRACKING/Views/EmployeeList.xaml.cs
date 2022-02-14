@@ -35,38 +35,12 @@ namespace WPFPERSONALTRACKING.Views
         {
             EmployeePage page = new EmployeePage();
             page.ShowDialog();
+            FillDatagrid();
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            cmbDepartment.ItemsSource = db.Departments.ToList();
-            cmbDepartment.DisplayMemberPath = "DepartmentName";
-            cmbDepartment.SelectedValuePath = "Id";
-            cmbDepartment.SelectedIndex = -1;
-
-            positions = db.Positions.ToList();
-            cmbPosition.ItemsSource = db.Positions.ToList();
-            cmbPosition.DisplayMemberPath = "PositionName";
-            cmbPosition.SelectedValuePath = "Id";
-            cmbPosition.SelectedIndex = -1;
-
-            list = db.Employees.Include(x => x.Position).Include(x => x.Department).Select(x => new EmployeeDetailModel()
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Adress = x.Adress,
-                BirthDay = (DateTime)x.BirthDay,
-                DepartmentId = x.DepartmentId,
-                DepartmentName = x.Department.DepartmentName,
-                IsAdmin = (bool)x.IsAdmin,
-                Password = x.Password,
-                PositionId = x.PositionId,
-                PositionName = x.Position.PositionName,
-                Salary = x.Salary,
-                Surname = x.Surname,
-                UserNo = x.UserNumber
-            }).ToList();
-            gridEmployee.ItemsSource = list;
+            FillDatagrid();
         }
 
         private void cmbDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -116,6 +90,48 @@ namespace WPFPERSONALTRACKING.Views
             cmbDepartment.ItemsSource = positions;
             cmbPosition.SelectedIndex = -1;
             gridEmployee.ItemsSource = list;
+        }
+
+        void FillDatagrid()
+        {
+            cmbDepartment.ItemsSource = db.Departments.ToList();
+            cmbDepartment.DisplayMemberPath = "DepartmentName";
+            cmbDepartment.SelectedValuePath = "Id";
+            cmbDepartment.SelectedIndex = -1;
+
+            positions = db.Positions.ToList();
+            cmbPosition.ItemsSource = db.Positions.ToList();
+            cmbPosition.DisplayMemberPath = "PositionName";
+            cmbPosition.SelectedValuePath = "Id";
+            cmbPosition.SelectedIndex = -1;
+
+            list = db.Employees.Include(x => x.Position).Include(x => x.Department).Select(x => new EmployeeDetailModel()
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Adress = x.Adress,
+                BirthDay = (DateTime)x.BirthDay,
+                DepartmentId = x.DepartmentId,
+                DepartmentName = x.Department.DepartmentName,
+                IsAdmin = (bool)x.IsAdmin,
+                Password = x.Password,
+                PositionId = x.PositionId,
+                PositionName = x.Position.PositionName,
+                Salary = x.Salary,
+                Surname = x.Surname,
+                UserNo = x.UserNumber,
+                ImagePath = x.ImagePath,
+            }).ToList();
+            gridEmployee.ItemsSource = list;
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeDetailModel model = (EmployeeDetailModel)gridEmployee.SelectedItem;
+            EmployeePage page = new EmployeePage();
+            page.Model = model;
+            page.ShowDialog();
+            FillDatagrid();
         }
     }
 }

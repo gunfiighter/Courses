@@ -21,5 +21,6 @@ namespace WPFPERSONALTRACKING.ViewModels
         public DateTime BirthDay { get; set; }
         public string Adress { get; set; }
         public string Password { get; set; }
+        public string ImagePath { get; set; }
     }
 }
