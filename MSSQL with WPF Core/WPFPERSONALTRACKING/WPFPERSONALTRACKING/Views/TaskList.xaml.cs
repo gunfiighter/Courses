@@ -150,5 +150,20 @@ namespace WPFPERSONALTRACKING.Views
             rbStart.IsChecked = false;
             gridTask.ItemsSource = taskList;
         }
+
+        TaskDetailModel model = new TaskDetailModel();
+
+        private void gridTask_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            model = (TaskDetailModel)gridTask.SelectedItem;
+        }
+        
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            TaskPage page = new TaskPage();
+            page.Model = model;
+            page.ShowDialog();
+            FillDataGrid();
+        }
     }
 }
