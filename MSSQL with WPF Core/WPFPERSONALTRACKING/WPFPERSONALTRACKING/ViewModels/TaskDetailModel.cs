@@ -19,5 +19,7 @@ namespace WPFPERSONALTRACKING.ViewModels
         public string Surname { get; set; }
         public int UserNumber { get; set; }
         public string StateName { get; set; }
+        public int PositionId { get; set; }
+        public int DepartmentId { get; set; }
     }
 }
