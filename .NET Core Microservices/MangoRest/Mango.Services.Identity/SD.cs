@@ -14,7 +14,6 @@ namespace Mango.Services.Identity
                 new IdentityResources.OpenId(),
                 new IdentityResources.Email(),
                 new IdentityResources.Profile(),
-                new IdentityResources.OpenId(),
             };
 
         public static IEnumerable<ApiScope> ApiScopes =>
