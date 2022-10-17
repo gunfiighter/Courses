@@ -1,6 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {AccountService} from "../_services/account.service";
+import {Observable} from "rxjs";
+import {User} from "../_models/user";
 
 @Component({
   selector: 'app-nav',
@@ -9,19 +11,17 @@ import {AccountService} from "../_services/account.service";
 })
 export class NavComponent implements OnInit {
   model: any = {};
-  _loggedIn: boolean = false;
 
-  constructor(private accountService: AccountService) { }
+  constructor(public accountService: AccountService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
+
   login()
   {
     this.accountService.login(this.model).subscribe({
       next:
         response => {
           console.log(response);
-          this._loggedIn = true;
       },
       error: error => {
         console.log(error);
@@ -31,6 +31,6 @@ export class NavComponent implements OnInit {
 
   logout()
   {
-    this._loggedIn = false;
+    this.accountService.logout();
   }
 }
