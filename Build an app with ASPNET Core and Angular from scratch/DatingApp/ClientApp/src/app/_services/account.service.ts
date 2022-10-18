@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ReplaySubject} from "rxjs";
-import {tap} from "rxjs/operators";
+import {tap, map} from "rxjs/operators";
 import {User} from "../_models/user";
 
 @Injectable({
@@ -27,6 +27,19 @@ export class AccountService {
           }
         })
       );
+  }
+
+  register(model : any)
+  {
+    return this.http.post(this.baseUrl + 'account/register', model).pipe(
+      map((user: any) => {
+        if(user)
+        {
+          localStorage.setItem('user', JSON.stringify(user));
+          this._currentUserSource.next(user);
+        }
+      })
+    )
   }
 
   setCurrentUser(user: User) {
