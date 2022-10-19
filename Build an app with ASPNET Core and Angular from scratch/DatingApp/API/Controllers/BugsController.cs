@@ -45,6 +45,6 @@ public class BugsController : BaseApiController
     [HttpGet("bad-request")]
     public ActionResult<string> GetBadRequest()
     {
-        return BadRequest("Thi was not a good request");
+        return BadRequest("This was not a good request");
     }
 }
