@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace API.Data;
 
@@ -16,7 +17,7 @@ public class Seed
         }
 
         var userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
-        var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
+        var users = JsonConvert.DeserializeObject<List<AppUser>>(userData);
 
         foreach (var user in users)
         {
