@@ -13,14 +13,14 @@ namespace API.Data.Migrations
                 name: "City",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
                 name: "Country",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<DateTime>(
@@ -41,28 +41,28 @@ namespace API.Data.Migrations
                 name: "Gender",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
                 name: "Interests",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
                 name: "Introduction",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
                 name: "KnownAs",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<DateTime>(
@@ -76,7 +76,7 @@ namespace API.Data.Migrations
                 name: "LookingFor",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.CreateTable(

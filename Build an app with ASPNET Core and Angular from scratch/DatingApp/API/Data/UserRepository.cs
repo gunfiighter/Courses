@@ -35,12 +35,12 @@ public class UserRepository : IUserRepository
             .ToListAsync();
     }
 
-    public async Task<AppUser> GetUserByIdAsync(int id)
+    public async Task<AppUser?> GetUserByIdAsync(int id)
     {
         return await _context.Users.FindAsync(id);
     }
 
-    public async Task<AppUser> GetUserByUserNameASync(string userName)
+    public async Task<AppUser?> GetUserByUserNameASync(string userName)
     {
         return await _context.Users
             .Include(p => p.Photos)
@@ -49,6 +49,8 @@ public class UserRepository : IUserRepository
 
     public async Task<IEnumerable<MemberDto>> GetMembersAsync()
     {
+       // var usersss = _context.Users.ToList();
+       // var users = await _context.Users.ToListAsync();
         return await _context.Users
             .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
             .ToListAsync();
